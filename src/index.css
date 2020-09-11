@@ -22,3 +22,26 @@ code {
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
   box-shadow: 3px 3px 5px 6px #ccc; 
 }
+
+.site-layout-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+  height: 80vh;
+}
+
+.ant-layout-content {
+  height: 80vh;
+}
+
+.ant-layout .layout {
+  margin: auto;
+}
+
+#components-layout-demo-top .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+}
