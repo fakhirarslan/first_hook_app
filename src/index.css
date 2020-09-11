@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.site-card-border-less-wrapper {
+  width: 500px;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.ant-card:hover {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc; 
+}
