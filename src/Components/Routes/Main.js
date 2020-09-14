@@ -24,7 +24,6 @@ class Main extends React.Component {
     }
 
     render() {
-        console.log(this.state.loggedIn);
         if (!this.state.loggedIn) {
             return (
                 <BrowserRouter>
