@@ -6,3 +6,7 @@
     display: flex;
     justify-content: center;
 }
+
+.divider {
+    height: 120px;
+}

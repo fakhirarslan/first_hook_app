@@ -44,13 +44,13 @@ class UserProfile extends React.Component {
                                     {this.state.user.name}
                                 </Card>
                             </Col>
-                            <Divider type="vertical" />
+                            <Divider className="divider" type="vertical" />
                             <Col span={6}>
                                 <Card title={<><MailOutlined />&nbsp;<h5>Email</h5></>} bordered={false}>
                                     {this.state.user.email}
                                 </Card>
                             </Col>
-                            <Divider type="vertical" />
+                            <Divider className="divider" type="vertical" />
                             <Col span={6}>
                                 <Card title={<><PhoneOutlined />&nbsp;<h5>Contact</h5></>} bordered={false}>
                                     {this.state.user.phone}
