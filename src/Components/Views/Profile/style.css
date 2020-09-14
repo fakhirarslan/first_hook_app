@@ -1,0 +1,8 @@
+.ant-row {
+    justify-content: center;
+}
+
+.ant-card-head-title {
+    display: flex;
+    justify-content: center;
+}

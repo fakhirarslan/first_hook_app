@@ -1,8 +1,8 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { Layout } from 'antd';
 import history from '../../Utils/history';
 import { removeUserSession, getUser } from '../../Utils/common';
+import Nav from '../Header/header';
 
 const { Header, Content, Footer } = Layout;
 
@@ -32,20 +32,12 @@ class Home extends React.Component {
         return (
             <Layout className="layout">
                 <Header>
-                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-                        <Menu.Item key="1">Home</Menu.Item>
-                        <Menu.Item key="2">nav 2</Menu.Item>
-                        <Menu.Item key="3">nav 3</Menu.Item>
-                        <Menu.SubMenu className="avatar" icon={<UserOutlined />}>
-                            <Menu.Item key="4">{this.state.user.name}</Menu.Item>
-                            <Menu.Item key="5">
-                                <p onClick={this.handleLogout}>Logout</p>
-                            </Menu.Item>
-                        </Menu.SubMenu>
-                    </Menu>
+                    <Nav handleLogout={this.handleLogout} user={this.state.user} />
                 </Header>
                 <Content>
-                    <div className="site-layout-content">Content</div>
+                    <div className="site-layout-content">
+                        Content
+                    </div>
                 </Content>
                 <Footer>Copyrights 2020</Footer>
             </Layout>
