@@ -16,11 +16,13 @@ code {
   width: 500px;
   margin: auto;
   margin-top: 5%;
+  
 }
 
 .ant-card:hover {
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow: 3px 3px 5px 6px #ccc; 
+  -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
 }
 
 .site-layout-content {
@@ -31,7 +33,12 @@ code {
 }
 
 .ant-layout-content {
-  height: 80vh;
+  padding: 10px 50px;
+}
+
+.ant-layout-footer {
+  margin: auto;
+  text-align: center;
 }
 
 .ant-layout .layout {
@@ -44,4 +51,8 @@ code {
   background: rgba(255, 255, 255, 0.2);
   margin: 16px 24px 16px 0;
   float: left;
+}
+
+.avatar {
+  float: right;
 }
