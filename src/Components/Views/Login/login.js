@@ -4,8 +4,19 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { login } from '../../UserFunctions/functions';
 import history from '../../Utils/history';
+import { connect } from 'react-redux';
+import { getUser } from './actionTypes';
+
+const mapStateToProps = (state) => {
+    return ({
+        user: state
+    });
+}
 
 function Login(props) {
+
+    const { dispatch } = this.props;
+
     const onFinish = values => {
         const user = {
             email: values.username,
@@ -13,10 +24,12 @@ function Login(props) {
         };
         login(user)
             .then(res => {
+                console.log(res.data);
                 if (res.data.status === "No User") {
                     message.error("Email or Password Does Not Match");
                 } else {
                     props.toggleLoggedIn();
+                    dispatch(getUser(res.data));
                     history.push(`/home`);
                     history.go();
                 }
@@ -73,4 +86,4 @@ function Login(props) {
     );
 }
 
-export default Login;
+export default connect(mapStateToProps)(Login);
