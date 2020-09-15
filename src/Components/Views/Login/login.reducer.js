@@ -1,4 +1,4 @@
-import { GET_USER } from './actionTypes';
+import { GET_USER } from './login.actionTypes';
 
 const initialState = {
     user: []
