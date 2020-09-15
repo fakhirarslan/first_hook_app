@@ -40,19 +40,19 @@ class UserProfile extends React.Component {
                     <div className="site-layout-content">
                         <Row>
                             <Col span={6}>
-                                <Card title={<><TeamOutlined />&nbsp;<h5>Username</h5></>} bordered={false}>
+                                <Card className="profile-card" hoverable={true} title={<><TeamOutlined />&nbsp;<h5>Full Name</h5></>} bordered={false}>
                                     {this.state.user.name}
                                 </Card>
                             </Col>
-                            <Divider className="divider" type="vertical" />
+                            <Divider type="vertical" />
                             <Col span={6}>
-                                <Card title={<><MailOutlined />&nbsp;<h5>Email</h5></>} bordered={false}>
+                                <Card className="profile-card" hoverable={true} title={<><MailOutlined />&nbsp;<h5>Email</h5></>} bordered={false}>
                                     {this.state.user.email}
                                 </Card>
                             </Col>
-                            <Divider className="divider" type="vertical" />
+                            <Divider type="vertical" />
                             <Col span={6}>
-                                <Card title={<><PhoneOutlined />&nbsp;<h5>Contact</h5></>} bordered={false}>
+                                <Card className="profile-card" hoverable={true} title={<><PhoneOutlined />&nbsp;<h5>Contact</h5></>} bordered={false}>
                                     {this.state.user.phone}
                                 </Card>
                             </Col>
