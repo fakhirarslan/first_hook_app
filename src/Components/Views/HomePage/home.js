@@ -1,6 +1,10 @@
 import React from 'react';
+import { Layout } from 'antd';
 import history from '../../Utils/history';
 import { removeUserSession, getUser } from '../../Utils/common';
+import Nav from '../Header/header';
+
+const { Header, Content, Footer } = Layout;
 
 class Home extends React.Component {
 
@@ -26,10 +30,17 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
-                Welcome {this.state.user.name}<br /><br />
-                <input type="button" onClick={this.handleLogout} value="Logout" />
-            </div>
+            <Layout className="layout">
+                <Header>
+                    <Nav handleLogout={this.handleLogout} user={this.state.user} />
+                </Header>
+                <Content>
+                    <div className="site-layout-content">
+                        Content
+                    </div>
+                </Content>
+                <Footer>Copyrights 2020</Footer>
+            </Layout>
         );
     }
 }

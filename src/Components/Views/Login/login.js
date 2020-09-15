@@ -4,8 +4,10 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { login } from '../../UserFunctions/functions';
 import history from '../../Utils/history';
+import './style.css';
 
 function Login(props) {
+
     const onFinish = values => {
         const user = {
             email: values.username,
@@ -17,6 +19,7 @@ function Login(props) {
                     message.error("Email or Password Does Not Match");
                 } else {
                     props.toggleLoggedIn();
+                    props.dispatch(props.getLoggedUser(res.data));
                     history.push(`/home`);
                     history.go();
                 }
