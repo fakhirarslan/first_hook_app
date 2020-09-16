@@ -9,8 +9,8 @@ class header extends React.Component {
         return (
             <Menu theme="dark" mode="horizontal">
                 <Menu.Item key="1"><Link to="/home">Home</Link></Menu.Item>
-                <Menu.Item key="2">nav 2</Menu.Item>
-                <Menu.Item key="3">nav 3</Menu.Item>
+                <Menu.Item key="2"><Link to="/addAudio">Add Song</Link></Menu.Item>
+                <Menu.Item key="3"><Link to="/audioPlayer">View Song</Link></Menu.Item>
                 <Menu.SubMenu className="avatar" icon={<UserOutlined />}>
                     <Menu.Item key="4">
                         <Link to="/userProfile">{this.props.user.name}</Link>

@@ -1,0 +1,43 @@
+.select {
+    margin: 10px;
+    width: 200px;
+    text-align: left;
+}
+
+.select .ant-select-selector {
+    text-align: left;
+}
+
+.select-div {
+    text-align: left;
+}
+
+.list {
+    margin: 10px;
+    width: 700px;
+}
+
+.list-item {
+    height: 80px;
+}
+
+.list-item:hover {
+    -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
+}
+
+.song-names {
+    float: left;
+    margin-top: 20px;
+}
+
+.song-player {
+    float: right;
+    margin: auto;
+}
+
+.song-card {
+    width: 500px;
+    margin: auto;
+}

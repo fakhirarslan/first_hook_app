@@ -4,7 +4,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { login } from '../../UserFunctions/functions';
 import history from '../../Utils/history';
-import './style.css';
+import '../Login/loginStyle.css';
 
 function Login(props) {
 

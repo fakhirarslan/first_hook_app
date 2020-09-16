@@ -5,6 +5,8 @@ import Login from '../Views/Login/login';
 import Register from '../Views/Register/register';
 import Home from '../Views/HomePage/home';
 import Profile from '../Views/Profile/userProfile';
+import AudioPlayer from '../Views/Audio/audioPlayer';
+import AddAudio from '../Views/Audio/addAudio';
 
 import { connect } from 'react-redux';
 import { getLoggedUser } from '../Views/Login/login.actionTypes';
@@ -41,6 +43,8 @@ class Main extends React.Component {
                         {getUser() ? null : <Route exact path="/register"><Register /></Route>}
                         {getUser() ? <Route exact path="/home"><Home user={this.props.user} /></Route> : <Route exact path="/login"><Login /></Route>}
                         {getUser() ? <Route exact path="/userProfile"><Profile /></Route> : <Route exact path="/login"><Login /></Route>}
+                        {getUser() ? <Route exact path="/audioPlayer"><AudioPlayer /></Route> : <Route exact path="/login"><Login /></Route>}
+                        {getUser() ? <Route exact path="/addAudio"><AddAudio /></Route> : <Route exact path="/login"><Login /></Route>}
                         {getUser() ? <Redirect to="/home" /> : <Redirect to="/login" />}
                     </Switch>
                 </BrowserRouter>
