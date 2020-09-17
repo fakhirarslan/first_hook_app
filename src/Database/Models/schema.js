@@ -8,4 +8,9 @@ const UserSchema = new Schema({
     phone: { type: String }
 });
 
+const songSchema = new Schema({
+    info: { type: Object }
+});
+
 module.exports = schema = mongoose.model('user', UserSchema);
+module.exports = song = mongoose.model('songs', songSchema);

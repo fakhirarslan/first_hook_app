@@ -25,5 +25,22 @@ export const login = user => {
     }).catch(error => {
       console.log('Error');
     });
+}
 
+export const addSong = newSong => {
+  return axios
+    .post('songs/songs', {
+      info: newSong
+    })
+    .then(response => {
+      return response;
+    })
+}
+
+export const getSong = () => {
+  return axios
+    .get('songs/songs')
+    .then(response => {
+      return response.data;
+    })
 }
