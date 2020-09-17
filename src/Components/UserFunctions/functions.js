@@ -20,27 +20,10 @@ export const login = user => {
       email: user.email, password: user.password
     })
     .then(response => {
+      console.log(response.data);
       setUserSession(response.data);
       return response;
     }).catch(error => {
       console.log('Error');
     });
-}
-
-export const addSong = newSong => {
-  return axios
-    .post('songs/songs', {
-      info: newSong
-    })
-    .then(response => {
-      return response;
-    })
-}
-
-export const getSong = () => {
-  return axios
-    .get('songs/songs')
-    .then(response => {
-      return response.data;
-    })
 }

@@ -15,6 +15,7 @@ function Login(props) {
         };
         login(user)
             .then(res => {
+                console.log(res);
                 if (res.data.status === "No User") {
                     message.error("Email or Password Does Not Match");
                 } else {
