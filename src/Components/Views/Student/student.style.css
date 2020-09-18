@@ -1,4 +1,43 @@
 .add-student-card {
-  width: 600px;
+  width: 500px;
   margin: auto;
+}
+
+.view-student-card {
+  width: 90%;
+  margin: auto;
+}
+
+.edit-student-card {
+  width: 500px;
+  margin: auto;
+}
+
+.edit-student-card:hover {
+  transform: scale(1.01);
+}
+
+.add-student-card:hover {
+  transform: scale(1.01);
+}
+
+.ant-row {
+  text-align: center;
+}
+
+.ant-form-item-control-input-content {
+  text-align: left;
+}
+
+.ant-form-item-label {
+  text-align: left;
+}
+
+.site-layout-content {
+  min-height: 80vh;
+  height: fit-content;
+}
+
+.student-table tbody tr:hover {
+  transform: scale(1.01);
 }

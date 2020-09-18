@@ -93,7 +93,7 @@ class CreateStudent extends Component {
                   onFinishFailed={this.onFinishFailed}
                 >
                   <Form.Item
-                    label="name"
+                    label="Name"
                     name="name"
                     rules={[
                       {
@@ -106,7 +106,7 @@ class CreateStudent extends Component {
                   </Form.Item>
 
                   <Form.Item
-                    label="email"
+                    label="Email"
                     name="email"
                     rules={[
                       {
@@ -119,7 +119,7 @@ class CreateStudent extends Component {
                   </Form.Item>
 
                   <Form.Item
-                    label="rollno"
+                    label="Roll No"
                     name="rollno"
                     rules={[
                       {

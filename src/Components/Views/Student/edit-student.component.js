@@ -4,7 +4,7 @@ import axios from 'axios';
 import Nav from '../Header/header';
 import history from '../../Utils/history';
 
-import { Form, Input, Button, Layout } from 'antd';
+import { Form, Input, Button, Layout, Card } from 'antd';
 import { removeUserSession, getUser } from '../../Utils/common';
 
 const { Header, Content, Footer } = Layout;
@@ -77,18 +77,15 @@ class EditStudent extends Component {
       rollno: rollno
     };
 
-    console.log(studentObject);
-
     axios.put('http://localhost:4000/students/update-student/' + this.props.match.params.id, studentObject)
       .then((res) => {
-        console.log(res.data)
         console.log('Student successfully updated')
       }).catch((error) => {
         console.log(error)
       })
 
     // Redirect to Student List 
-    this.props.history.push('/student-list')
+    this.props.history.push('/student-list');
   };
 
   render() {
@@ -100,54 +97,56 @@ class EditStudent extends Component {
           </Header>
           <Content>
             <div className="site-layout-content">
-              <Form
-                {...layout}
-                name="basic"
-                onFinish={this.onFinish}
-                onFinishFailed={this.onFinishFailed}
-              >
-                <Form.Item
-                  label="name"
-                  name="name"
-                  rules={[
-                    {
-                      message: 'Please input your name!',
-                    },
-                  ]}
+              <Card title={this.state.name} className="edit-student-card" bordered={false} hoverable={true}>
+                <Form
+                  {...layout}
+                  name="basic"
+                  onFinish={this.onFinish}
+                  onFinishFailed={this.onFinishFailed}
                 >
-                  <Input />
-                </Form.Item>
+                  <Form.Item
+                    label="name"
+                    name="name"
+                    rules={[
+                      {
+                        message: 'Please input your name!',
+                      },
+                    ]}
+                  >
+                    <Input placeholder={this.state.name}/>
+                  </Form.Item>
 
-                <Form.Item
-                  label="email"
-                  name="email"
-                  rules={[
-                    {
-                      message: 'Please input your email!',
-                    },
-                  ]}
-                >
-                  <Input />
-                </Form.Item>
+                  <Form.Item
+                    label="email"
+                    name="email"
+                    rules={[
+                      {
+                        message: 'Please input your email!',
+                      },
+                    ]}
+                  >
+                    <Input placeholder={this.state.email}/>
+                  </Form.Item>
 
-                <Form.Item
-                  label="rollno"
-                  name="rollno"
-                  rules={[
-                    {
-                      message: 'Please input your Roll No!',
-                    },
-                  ]}
-                >
-                  <Input />
-                </Form.Item>
+                  <Form.Item
+                    label="rollno"
+                    name="rollno"
+                    rules={[
+                      {
+                        message: 'Please input your Roll No!',
+                      },
+                    ]}
+                  >
+                    <Input placeholder={this.state.rollno}/>
+                  </Form.Item>
 
-                <Form.Item {...tailLayout}>
-                  <Button type="primary" htmlType="submit">
-                    Update
-        </Button>
-                </Form.Item>
-              </Form>
+                  <Form.Item {...tailLayout}>
+                    <Button type="primary" htmlType="submit">
+                      Update
+                    </Button>
+                  </Form.Item>
+                </Form>
+              </Card>
             </div>
           </Content>
           <Footer>Copyrights 2020</Footer>
