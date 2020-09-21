@@ -2,11 +2,16 @@
     width: 500px;
     margin: auto;
     margin-top: 5%;
-    
 }
   
 .ant-card:hover {
     -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
+    transform: scale(1.01);
+    transition: all .3s ease-in;
+}
+
+.ant-form-item-control {
+	text-align: center !important;
 }

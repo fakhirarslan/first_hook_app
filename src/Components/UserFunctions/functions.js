@@ -20,10 +20,10 @@ export const login = user => {
       email: user.email, password: user.password
     })
     .then(response => {
+      console.log(response.data);
       setUserSession(response.data);
       return response;
     }).catch(error => {
       console.log('Error');
     });
-
 }

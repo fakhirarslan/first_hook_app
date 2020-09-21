@@ -5,6 +5,9 @@ import Login from '../Views/Login/login';
 import Register from '../Views/Register/register';
 import Home from '../Views/HomePage/home';
 import Profile from '../Views/Profile/userProfile';
+import CreateStudent from '../Views/Student/create-student.component';
+import StudentList from '../Views/Student/student-list.component';
+import EditStudent from '../Views/Student/edit-student.component';
 
 import { connect } from 'react-redux';
 import { getLoggedUser } from '../Views/Login/login.actionTypes';
@@ -39,7 +42,10 @@ class Main extends React.Component {
                         <Route exact path="/"><Login /></Route>
                         {getUser() ? null : <Route exact path="/login"><Login toggleLoggedIn={this.toggleLoggedIn} dispatch={this.props.dispatch} getLoggedUser={getLoggedUser} user={this.props.user}/></Route>}
                         {getUser() ? null : <Route exact path="/register"><Register /></Route>}
-                        {getUser() ? <Route exact path="/home"><Home user={this.props.user} /></Route> : <Route exact path="/login"><Login /></Route>}
+                        {getUser() ? <Route exact path="/home"><Home user={this.props.user} /></Route> : <Route exact path="/login" component={Login} />}
+                        {getUser() ? <Route exact path="/create-student" component={CreateStudent} /> : <Route exact path="/login" component={Login} />}
+                        {getUser() ? <Route exact path="/student-list" component={StudentList} /> : <Route exact path="/login" component={Login} />}
+                        {getUser() ? <Route exact path="/edit-student/:id" component={EditStudent} /> : <Route exact path="/login" component={Login} />}
                         {getUser() ? <Route exact path="/userProfile"><Profile /></Route> : <Route exact path="/login"><Login /></Route>}
                         {getUser() ? <Redirect to="/home" /> : <Redirect to="/login" />}
                     </Switch>

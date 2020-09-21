@@ -4,7 +4,7 @@ import history from '../../Utils/history';
 import { removeUserSession, getUser } from '../../Utils/common';
 import Nav from '../Header/header';
 import { MailOutlined, PhoneOutlined, TeamOutlined } from '@ant-design/icons';
-import '../Profile/style.css';
+import '../Profile/profileStyle.css';
 
 const { Header, Content, Footer } = Layout;
 
@@ -44,13 +44,13 @@ class UserProfile extends React.Component {
                                     {this.state.user.name}
                                 </Card>
                             </Col>
-                            <Divider type="vertical" />
+                            <Divider className="profile-divider" type="vertical" />
                             <Col span={6}>
                                 <Card className="profile-card" hoverable={true} title={<><MailOutlined />&nbsp;<h5>Email</h5></>} bordered={false}>
                                     {this.state.user.email}
                                 </Card>
                             </Col>
-                            <Divider type="vertical" />
+                            <Divider className="profile-divider" type="vertical" />
                             <Col span={6}>
                                 <Card className="profile-card" hoverable={true} title={<><PhoneOutlined />&nbsp;<h5>Contact</h5></>} bordered={false}>
                                     {this.state.user.phone}

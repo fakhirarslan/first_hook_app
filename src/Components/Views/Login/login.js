@@ -4,7 +4,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { login } from '../../UserFunctions/functions';
 import history from '../../Utils/history';
-import './style.css';
+import '../Login/loginStyle.css';
 
 function Login(props) {
 
@@ -15,6 +15,7 @@ function Login(props) {
         };
         login(user)
             .then(res => {
+                console.log(res);
                 if (res.data.status === "No User") {
                     message.error("Email or Password Does Not Match");
                 } else {
@@ -23,6 +24,9 @@ function Login(props) {
                     history.push(`/home`);
                     history.go();
                 }
+            })
+            .catch(err => {
+                message.error("No Internet!");
             });
     };
 
@@ -64,7 +68,7 @@ function Login(props) {
                         />
                     </Form.Item>
 
-                    <Form.Item>
+                    <Form.Item className="login-item">
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             Log in
                         </Button>
