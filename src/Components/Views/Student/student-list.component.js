@@ -21,7 +21,8 @@ class StudentList extends Component {
       students: [],
       user: [],
       searchText: '',
-      searchedColumn: ''
+      searchedColumn: '',
+      isLoading: true
     };
   }
 
@@ -29,7 +30,8 @@ class StudentList extends Component {
     axios.get('http://localhost:4000/students/')
       .then(res => {
         this.setState({
-          students: res.data
+          students: res.data,
+          isLoading: false
         });
         getStudent(res.data);
       })
@@ -195,7 +197,7 @@ class StudentList extends Component {
           <Content>
             <div className="site-layout-content">
               <Card title="Students" className="view-student-card" bordered={false} hoverable={true}>
-                <Table className="student-table" columns={columns} dataSource={this.state.students} onChange={this.onChange} />
+                <Table className="student-table" columns={columns} dataSource={this.state.students} onChange={this.onChange} loading={this.state.isLoading ? true : false} />
               </Card>
             </div>
           </Content>

@@ -24,6 +24,9 @@ function Login(props) {
                     history.push(`/home`);
                     history.go();
                 }
+            })
+            .catch(err => {
+                message.error("No Internet!");
             });
     };
 
@@ -65,7 +68,7 @@ function Login(props) {
                         />
                     </Form.Item>
 
-                    <Form.Item>
+                    <Form.Item className="login-item">
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             Log in
                         </Button>

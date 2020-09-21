@@ -6,6 +6,7 @@ import history from '../../Utils/history';
 
 import { Form, Input, Button, Layout, Card } from 'antd';
 import { removeUserSession, getUser } from '../../Utils/common';
+import { SyncOutlined } from '@ant-design/icons';
 
 const { Header, Content, Footer } = Layout;
 
@@ -34,7 +35,8 @@ class EditStudent extends Component {
       name: '',
       email: '',
       rollno: '',
-      user: []
+      user: [],
+      isLoading: true
     }
   }
 
@@ -44,7 +46,8 @@ class EditStudent extends Component {
         this.setState({
           name: res.data.name,
           email: res.data.email,
-          rollno: res.data.rollno
+          rollno: res.data.rollno,
+          isLoading: false
         });
       })
       .catch((error) => {
@@ -88,6 +91,14 @@ class EditStudent extends Component {
     this.props.history.push('/student-list');
   };
 
+  nameChange = (e) => {
+    if (e.target.value === '') {
+      document.getElementsByClassName("ant-card-head-title")[0].innerHTML = this.state.name;
+    } else { 
+      document.getElementsByClassName("ant-card-head-title")[0].innerHTML = e.target.value; 
+    }
+  }
+
   render() {
     return (
       <div>
@@ -97,7 +108,7 @@ class EditStudent extends Component {
           </Header>
           <Content>
             <div className="site-layout-content">
-              <Card title={this.state.name} className="edit-student-card" bordered={false} hoverable={true}>
+              <Card title={this.state.isLoading ? <SyncOutlined spin /> : this.state.name} className="edit-student-card" bordered={false} hoverable={true} >
                 <Form
                   {...layout}
                   name="basic"
@@ -113,7 +124,7 @@ class EditStudent extends Component {
                       },
                     ]}
                   >
-                    <Input placeholder={this.state.name}/>
+                    <Input placeholder={this.state.name} onChange={this.nameChange} />
                   </Form.Item>
 
                   <Form.Item
@@ -125,7 +136,7 @@ class EditStudent extends Component {
                       },
                     ]}
                   >
-                    <Input placeholder={this.state.email}/>
+                    <Input placeholder={this.state.email} />
                   </Form.Item>
 
                   <Form.Item
@@ -137,10 +148,10 @@ class EditStudent extends Component {
                       },
                     ]}
                   >
-                    <Input placeholder={this.state.rollno}/>
+                    <Input placeholder={this.state.rollno} />
                   </Form.Item>
 
-                  <Form.Item {...tailLayout}>
+                  <Form.Item {...tailLayout} className="edit-student-form">
                     <Button type="primary" htmlType="submit">
                       Update
                     </Button>

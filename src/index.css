@@ -36,9 +36,22 @@ code {
   padding: 10px 50px;
 }
 
+.ant-layout-header {
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+
+.ant-menu {
+  background: unset;
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+
 .ant-layout-footer {
   margin: auto;
   text-align: center;
+  width: 100%;
 }
 
 .ant-layout .layout {

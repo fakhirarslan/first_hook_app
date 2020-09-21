@@ -3,6 +3,12 @@
   margin: auto;
 }
 
+.add-student-card .Buttant-btn .ant-btn-primaryon {
+  width: 500px;
+  margin: auto;
+  text-align: left;
+}
+
 .view-student-card {
   width: 90%;
   margin: auto;
@@ -25,8 +31,12 @@
   text-align: center;
 }
 
-.ant-form-item-control-input-content {
-  text-align: left;
+.add-student-form .ant-col .ant-form-item-control-input {
+  text-align: left !important;
+}
+
+.edit-student-form .ant-col .ant-form-item-control-input {
+  text-align: left !important;
 }
 
 .ant-form-item-label {

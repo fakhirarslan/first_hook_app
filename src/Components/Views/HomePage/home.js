@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 import history from '../../Utils/history';
 import { removeUserSession, getUser } from '../../Utils/common';
 import Nav from '../Header/header';
+import Carousel from '../HomePage/Carousel3d';
 
 const { Header, Content, Footer } = Layout;
 
@@ -30,16 +31,16 @@ class Home extends React.Component {
 
     render() {
         return (
-            <Layout className="layout">
+            <Layout className="carousel-layout">
                 <Header>
                     <Nav handleLogout={this.handleLogout} user={this.state.user} />
                 </Header>
-                <Content>
-                    <div className="site-layout-content">
-                        Content
+                <Content className="class-container">
+                    <div className="site-layout-content home-container">
+                        <Carousel />
                     </div>
                 </Content>
-                <Footer>Copyrights 2020</Footer>
+                <Footer className="home-footer">Copyrights 2020</Footer>
             </Layout>
         );
     }

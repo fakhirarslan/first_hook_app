@@ -131,7 +131,7 @@ class CreateStudent extends Component {
                     <Input />
                   </Form.Item>
 
-                  <Form.Item {...tailLayout}>
+                  <Form.Item {...tailLayout} className="add-student-form">
                     <Button type="primary" htmlType="submit">
                       Add
 						        </Button>

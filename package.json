@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bit/bit.evangelist.elements.image": "^1.1.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -15,6 +16,7 @@
     "express": "^4.17.1",
     "http-proxy-middleware": "^1.0.5",
     "mongoose": "^5.10.4",
+    "node-sass": "^4.14.1",
     "rc-queue-anim": "^1.8.5",
     "rc-tween-one": "^2.7.3",
     "react": "^16.13.1",
